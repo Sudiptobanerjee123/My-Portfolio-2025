@@ -1,0 +1,233 @@
+/* Leadership Section Styles */
+.leadership-section {
+  padding: 1.5rem 0;
+  background: var(--primary-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.leadership-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.leadership-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.leadership-card {
+  background: var(--secondary-bg);
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 2px solid rgba(255, 215, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.leadership-card::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, transparent, var(--accent), transparent);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.leadership-role {
+  color: var(--accent);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.leadership-organization {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.organization-logo {
+  width: 60px;
+  height: 60px;
+  padding: 1px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  flex-shrink: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.organization-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  filter: grayscale(0.5) brightness(1.2);
+}
+
+.organization-info {
+  flex: 1;
+}
+
+.organization-name {
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+
+.organization-details {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Hover Effects */
+@media (hover: hover) {
+  .leadership-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+  }
+
+  .leadership-card:hover::before {
+    opacity: 0.3;
+  }
+
+  .leadership-card:hover .organization-logo {
+    transform: rotate(-5deg) scale(1.1);
+    background: rgba(255, 215, 0, 0.08);
+    box-shadow: 0 6px 16px rgba(255, 215, 0, 0.1);
+  }
+
+  .leadership-card:hover .organization-logo img {
+    filter: grayscale(0) brightness(1.4);
+    transform: scale(1.05);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .leadership-container {
+    padding: 0 1.5rem;
+  }
+
+  .leadership-grid {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .leadership-section {
+    padding: 3rem 0;
+  }
+
+  .leadership-card {
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+  }
+
+  .leadership-role {
+    font-size: 1.1rem;
+  }
+
+  .organization-logo {
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgba(255, 215, 0, 0.3); /* Thinner border */
+    padding: 0.4px; /* Reduced padding */
+    box-sizing: border-box; /* Include border/padding in dimensions */
+    background: rgba(255, 215, 0, 0.05);
+    border-radius: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .organization-name {
+    font-size: 0.95rem;
+  }
+
+  .organization-details {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .leadership-container {
+    padding: 0 1rem;
+  }
+
+  .leadership-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .leadership-card {
+    padding: 1.25rem;
+  }
+
+  .leadership-organization {
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .organization-logo {
+    width: 45px;
+    height: 45px;
+    border: 2px solid rgba(255, 215, 0, 0.3); /* Thinner border */
+    padding: 0.4px; /* Reduced padding */
+    box-sizing: border-box; /* Include border/padding in dimensions */
+    background: rgba(255, 215, 0, 0.05);
+    border-radius: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .organization-name {
+    font-size: 0.9rem;
+  }
+
+  @media (hover: none) {
+    .leadership-card {
+      transform: none !important;
+      box-shadow: none !important;
+    }
+    
+    .organization-logo img {
+      filter: grayscale(0.5) brightness(1.2) !important;
+      transform: none !important;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .leadership-card {
+    padding: 1rem;
+  }
+
+  .organization-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .organization-name {
+    font-size: 0.85rem;
+  }
+
+  .organization-details {
+    font-size: 0.8rem;
+  }
+}

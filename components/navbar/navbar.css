@@ -1,0 +1,347 @@
+/* navbar.css */
+#main-nav {
+    background: linear-gradient(90deg, var(--primary-bg) 0%, #121212 100%);
+    padding: 1rem 10rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .goose-logo-container {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .goose-icon {
+    color: var(--accent);
+    transition: var(--transition);
+    filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.2));
+  }
+  
+  .navbar-brand {
+    padding: 1rem;
+  }
+  
+  .logo-text {
+    font-weight: 600;
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    letter-spacing: 0.5px;
+  }
+  
+  @keyframes goose-fly {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-3px) rotate(-5deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+  }
+  
+  .navbar-brand:hover .goose-icon {
+    animation: goose-fly 0.8s ease-in-out infinite;
+    color: #fff3b0;
+    filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.4));
+  }
+  
+  .container {
+    max-width: 1300px;
+  }
+  
+  .navbar-collapse {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .navbar-nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  .nav-right {
+    margin-left: 1rem; /* Add space between last nav item and CTA */
+}
+  
+  .navbar-nav .nav-item {  
+    position: relative;
+  }
+  
+  .navbar-nav .nav-link {
+    color: var(--text-secondary) !important;
+    font-size: 1rem;
+    padding: 0.625rem 1rem !important;
+    font-weight: 500;
+    letter-spacing: 0.1px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    position: relative;
+  }
+  
+  .navbar-nav .nav-link:not(.dropdown-toggle)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0.375rem;
+    left: 50%;
+    background-color: var(--accent);
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+  }
+  
+  .navbar-nav .nav-link:hover:not(.dropdown-toggle)::after {
+    width: 70%;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: var(--accent) !important;
+    background-color: rgba(255, 215, 0, 0.05);
+  }
+  
+  .dropdown-toggle {
+    display: flex;
+    align-items: center;
+  }
+  
+  .dropdown-toggle::after {
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    transition: transform 0.2s ease;
+  }
+  
+  .dropdown-toggle[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+  }
+  
+  .dropdown-menu {
+    background-color: #121212;
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    padding: 0.5rem;
+    margin-top: 0.75rem;
+    min-width: 180px;
+    animation: dropdownFade 0.2s ease-out;
+  }
+  
+  @keyframes dropdownFade {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .dropdown-item {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    padding: 0.625rem 1rem;
+    transition: all 0.2s ease;
+    border-radius: 6px;
+    margin-bottom: 0.25rem;
+  }
+  
+  .dropdown-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .dropdown-item:hover, 
+  .dropdown-item:focus {
+    background-color: rgba(255, 215, 0, 0.1);
+    color: var(--accent);
+  }
+  
+  .cta-button {
+    background: linear-gradient(135deg, var(--highlight) 0%, #4A148C 100%);
+    color: white;
+    border-radius: 8px;
+    padding: 0.5rem 1.25rem !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 215, 0, 0.3) !important;
+    backdrop-filter: blur(4px);
+  }
+  
+  .cta-button:hover {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.25) 0%, rgba(255, 215, 0, 0.35) 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.2);
+  }
+  
+  .navbar-toggler {
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    padding: 0.375rem 0.625rem;
+    transition: all 0.2s ease;
+  }
+  
+  .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.15rem rgba(255, 215, 0, 0.25);
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,215,0,0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+  
+  #main-nav.scrolled {
+    padding: 0.75rem 1.5rem;
+    background: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(10px);
+  }
+/* Updated Mobile/Tablet View */
+@media (max-width: 991.98px) {
+  #main-nav {
+    padding: 0.75rem 1rem;
+  }
+
+  .navbar-brand {
+    max-width: 50%;
+    gap: 0.5rem;
+    margin-left: -0.5rem; /* Added negative margin */
+    padding-left: 0 !important; /* Remove left padding */
+  }
+
+  .logo-text {
+    font-size: 1.2rem;
+    margin-left: -4px; /* Fine-tune text position */
+    padding-left: 0;
+  }
+
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--primary-bg);
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-left: 0 !important;
+  }
+
+  .nav-link {
+    padding: 0.75rem 1rem !important;
+    font-size: 0.95rem !important;
+  }
+
+  .dropdown-menu {
+    margin-left: 1rem;
+    background-color: rgba(18, 18, 18, 0.95);
+  }
+
+  .cta-button {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 1024px) and (min-width: 577px) {
+  .navbar-brand {
+    max-width: 60%;
+    margin-left: -0.5rem;
+    padding-left: 0;
+  }
+
+  .goose-logo-container {
+    width: 35px;
+    height: 35px;
+    margin-right: 0.5rem;
+  }
+
+  .logo-text {
+    font-size: 1.3rem;
+    margin-left: -4px;
+  }
+
+  .navbar-collapse {
+    position: static;
+    display: flex !important;
+    flex-basis: auto;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+    gap: 0.8rem;
+    margin-left: auto !important;
+    flex-wrap: nowrap;
+    align-items: center; /* Added for vertical alignment */
+  }
+
+  .nav-link {
+    padding: 0.6rem 0.9rem !important; /* Matched padding */
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  .cta-button {
+    margin-left: 0.5rem;
+    padding: 0.6rem 1.2rem !important; /* Adjusted padding */
+    line-height: 1.2; /* Added for text alignment */
+    vertical-align: middle; /* Ensure vertical alignment */
+    margin-top: -2px; /* Fine-tune positioning */
+  }
+
+  #main-nav {
+    padding: 0.8rem 1.5rem !important;
+  }
+}
+/* Mobile View (576px and below) */
+@media (max-width: 576px) {
+  .navbar-brand {
+    max-width: 80%; /* Allow more space for logo+text */
+    margin-left: -1rem; /* More aggressive left shift */
+    padding-left: 0;
+  }
+  .logo-text {
+    margin-left: -8px; /* Compensate for smaller screens */
+    font-size: 1.1rem; /* Optional: Reduce size if needed */
+  }
+  .goose-logo-container {
+    width: 30px; /* Slightly smaller logo */
+    height: 30px;
+    margin-left: 0.25rem;
+  }
+
+  .navbar-toggler {
+    padding: 0.5rem;
+  }
+
+  .navbar-collapse {
+    display: flex;
+    border-top: 2px solid transparent; /* Required for border-image to work */
+    border-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--accent) 50%,
+        transparent 100%
+      )
+      1;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navbar-nav {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+
+  .nav-link {
+    font-size: 1rem !important;
+    width: 100%;
+    padding: 0.75rem;
+  }
+
+  /* CTA Button Below Nav Links */
+  .cta-button {
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
+  }
+}

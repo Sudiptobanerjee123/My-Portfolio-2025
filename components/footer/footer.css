@@ -1,0 +1,139 @@
+/* Modern Minimal Footer Styles */
+.footer-section {
+    background: linear-gradient(90deg, var(--primary-bg) 0%, #121212 100%);
+    padding: 0.5rem 0;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    position: relative;
+    border-top: 1px solid rgba(255, 215, 0, 0.1);
+    backdrop-filter: blur(12px);
+    margin-top: 4rem;
+  }
+  
+  .footer-section::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--accent) 50%,
+      transparent 100%
+    );
+  }
+  
+  .copyright {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding: 0.7rem 0;
+  }
+  
+  .scroll-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background:var(--highlight);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+  }
+  
+  .scroll-top:hover {
+    background: var(--accent);
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 6px 25px rgba(255, 215, 0, 0.2);
+  }
+  
+  .scroll-top i {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .scroll-top.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Tablet Optimizations (768px and below) */
+  @media (max-width: 768px) {
+    .footer-section {
+      padding: 1.2rem 0;
+      margin-top: 2rem;
+    }
+    
+    .copyright {
+      font-size: 0.85rem;
+      padding: 0.5rem 1rem;
+    }
+    
+    .scroll-top {
+      width: 40px;
+      height: 40px;
+      bottom: 1.2rem;
+      right: 1.2rem;
+    }
+    
+    .scroll-top i {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Mobile Optimizations (480px and below) */
+  @media (max-width: 480px) {
+    .footer-section {
+      padding: 1rem 0;
+      margin-top: 1.5rem;
+      backdrop-filter: blur(8px);
+    }
+    
+    .copyright {
+      font-size: 0.8rem;
+      letter-spacing: 0.3px;
+      padding: 0.5rem 1rem;
+    }
+    
+    .scroll-top {
+      width: 38px;
+      height: 38px;
+      bottom: 1rem;
+      right: 1rem;
+    }
+    
+    .scroll-top i {
+      font-size: 0.9rem;
+    }
+    
+    .footer-section::before {
+      height: 1px;
+    }
+  }
+  
+  /* Small Mobile Optimization (360px and below) */
+  @media (max-width: 360px) {
+    .copyright {
+      font-size: 0.75rem;
+      padding: 0.5rem 0.8rem;
+    }
+    
+    .scroll-top {
+      width: 35px;
+      height: 35px;
+      bottom: 0.8rem;
+      right: 0.8rem;
+    }
+  }

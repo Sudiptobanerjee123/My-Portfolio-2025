@@ -1,0 +1,23 @@
+/* Color Variables */
+:root {
+    --primary-bg: #1A1A1A;       /* Deep charcoal */
+    --secondary-bg: #2D2D2D;     /* Smoky gray */
+    --accent: #FFD700;           /* Gold accent */
+    --text-primary: #E0E0E0;     /* Soft white */
+    --text-secondary: #9E9E9E;   /* Medium gray */
+    --highlight: #6A1B9A;        /* Rich plum */
+    --transition: all 0.3s ease-in-out;
+  }
+  
+  /* Base Styles */
+  body {
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+  } 
+
+  
